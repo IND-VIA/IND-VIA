@@ -1,335 +1,333 @@
+```html
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IND-VIA | Industrial Commerce & Recovery Network</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            brand: {
-              emerald: '#10b981',
-              dark: '#030712',
-              card: '#0B1120',
-              border: '#1E293B',
-              amber: '#f59e0b'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    /* Custom Scrollbar & Gradients */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #030712; }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #10b981; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IND-VIA | Next-Gen Sovereign Intelligence & Cyber-Physical Infrastructure</title>
     
-    .grid-bg {
-      background-image: radial-gradient(rgba(16, 185, 129, 0.12) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-  </style>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome 6 Pro Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Premium Fonts: Syne (Ultra-futuristic display) & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js for true 3D Interactive Depth -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom Tailwind Configuration aligned with Logo Palette -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            obsidian: '#040507',
+                            carbon: '#090C11',
+                            surface: '#0F141D',
+                            card: '#131A26',
+                            border: '#1E293B',
+                            // Fiery Saffron / Metallic Orange (Left Logo Facet)
+                            saffron: '#FF6B00',
+                            saffronNeon: '#FF8A00',
+                            saffronGlow: 'rgba(255, 107, 0, 0.45)',
+                            // Brushed Titanium / Chrome Silver (Middle Letters)
+                            silverBright: '#FFFFFF',
+                            silverMid: '#CBD5E1',
+                            silverMuted: '#64748B',
+                            // Emerald Green / Cyber Blade (Right Accent & Slash)
+                            emerald: '#00E676',
+                            emeraldDeep: '#00B050',
+                            emeraldGlow: 'rgba(0, 230, 118, 0.45)'
+                        }
+                    },
+                    boxShadow: {
+                        'neon-saffron': '0 0 35px -5px rgba(255, 107, 0, 0.55)',
+                        'neon-emerald': '0 0 35px -5px rgba(0, 230, 118, 0.55)',
+                        'neon-dual': '0 0 45px -8px rgba(255, 107, 0, 0.35), 0 0 45px -8px rgba(0, 230, 118, 0.35)',
+                        'titanium-card': '0 25px 60px -15px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.12)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth base behaviors */
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: #040507;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar with metallic orange/green accents */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #040507;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #FF6B00 0%, #1E293B 50%, #00E676 100%);
+            border-radius: 999px;
+        }
+
+        /* 3D Brushed Chrome Text Fill */
+        .text-chrome {
+            background: linear-gradient(145deg, #FFFFFF 0%, #E2E8F0 25%, #94A3B8 50%, #FFFFFF 75%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+        }
+
+        /* Saffron Radiant Fire Text */
+        .text-saffron-gradient {
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFA726 30%, #FF6B00 80%, #D84315 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 14px rgba(255, 107, 0, 0.4));
+        }
+
+        /* Emerald Cyber Blade Text */
+        .text-emerald-gradient {
+            background: linear-gradient(135deg, #E8F5E9 0%, #69F0AE 35%, #00E676 80%, #00897B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 14px rgba(0, 230, 118, 0.4));
+        }
+
+        /* 3D Metallic Card Border with dynamic hover response */
+        .metallic-glass-card {
+            position: relative;
+            background: linear-gradient(165deg, rgba(19, 26, 38, 0.85) 0%, rgba(9, 12, 17, 0.95) 100%);
+            backdrop-filter: blur(24px);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        .metallic-glass-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 1.25rem;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.5) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(0, 230, 118, 0.5) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .metallic-glass-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Circuit line dynamic animation */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; transform: scaleX(1); }
+            50% { opacity: 0.9; transform: scaleX(1.03); }
+        }
+        .circuit-pulse {
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        /* Infinite horizontal ticker */
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-ticker {
+            display: flex;
+            width: 200%;
+            animation: tickerScroll 24s linear infinite;
+        }
+        .animate-ticker:hover {
+            animation-play-state: paused;
+        }
+
+        /* Subtle mesh background grid */
+        .cyber-grid {
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        }
+    </style>
 </head>
-<body class="bg-[#030712] text-slate-100 antialiased selection:bg-emerald-500 selection:text-slate-950">
+<body class="text-brand-silverMid selection:bg-brand-saffron selection:text-black relative">
 
-  <!-- Notification / Alert Toast -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-emerald-950 border border-emerald-500 text-emerald-200 px-5 py-3 rounded-xl shadow-2xl">
-    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
-    <span id="toast-msg" class="text-sm font-medium">Operation completed successfully</span>
-  </div>
+    <!-- WebGL Three.js Ambient 3D Canvas Background -->
+    <div id="canvas-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-70"></div>
+    <div class="fixed inset-0 cyber-grid pointer-events-none z-0"></div>
 
-  <!-- Enterprise Navbar -->
-  <nav class="sticky top-0 z-40 bg-[#030712]/90 backdrop-blur-md border-b border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <img 
-          src="logo.png" 
-          alt="IND-VIA Official Logo" 
-          class="h-12 w-auto object-contain rounded-lg transition-transform group-hover:scale-105 duration-200"
-          onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/IND-VIA/IND-VIA/main/logo.png';"
-        />
-        <div class="hidden sm:block border-l border-slate-800 pl-3.5">
-          <p class="text-xs font-bold text-slate-200 uppercase tracking-wider">IND-VIA &trade;</p>
-          <p class="text-[10px] text-emerald-400 font-mono tracking-widest font-semibold uppercase">Commerce &bull; Recovery Network</p>
-        </div>
-      </a>
+    <!-- Top Glow Horizon -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-6xl h-44 bg-gradient-to-b from-brand-saffron/15 via-brand-emerald/10 to-transparent blur-3xl pointer-events-none z-0"></div>
 
-      <!-- Navigation Menu -->
-      <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
-        <a href="#overview" class="hover:text-emerald-400 transition-colors">Overview</a>
-        <a href="#capabilities" class="hover:text-emerald-400 transition-colors">Platform Scope</a>
-        <a href="#lifecycle" class="hover:text-emerald-400 transition-colors">6-Stage Protocol</a>
-        <a href="#calculator" class="hover:text-emerald-400 transition-colors">Settlement Engine</a>
-        <a href="#vision" class="hover:text-emerald-400 transition-colors">Vision & Approach</a>
-        <a href="#leadership" class="hover:text-emerald-400 transition-colors">Leadership</a>
-      </div>
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="h-20 px-6 sm:px-8 rounded-2xl bg-brand-carbon/80 backdrop-blur-2xl border border-white/10 flex items-center justify-between shadow-2xl relative">
+                
+                <!-- Brand Anchor & High-Def Logo Rendering -->
+                <a href="#hero" class="flex items-center gap-3.5 group">
+                    <div class="relative py-1">
+                        <img src="Logo.png" 
+                             alt="IND-VIA" 
+                             id="nav-logo-img"
+                             class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_4px_16px_rgba(255,107,0,0.35)]"
+                             onerror="handleLogoFallback(this)">
+                    </div>
+                </a>
 
-      <!-- Action Button -->
-      <div class="flex items-center gap-3">
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-200 transition-all">
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>Official Channels</span>
-        </a>
-        <a href="#calculator" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2.5 rounded-lg text-xs tracking-wide uppercase transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-1.5">
-          <span>Calculate Yield</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </a>
-      </div>
-    </div>
-  </nav>
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-brand-silverMid">
+                    <a href="#vision" class="hover:text-brand-saffron transition-all duration-200 relative group py-2">
+                        Founder's Vision
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-saffron transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#ecosystem" class="hover:text-brand-silverBright transition-all duration-200 relative group py-2">
+                        Core Ecosystem
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-silverBright transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#simulator" class="hover:text-brand-emerald transition-all duration-200 relative group py-2">
+                        Live Architecture
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-emerald transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#benchmarks" class="hover:text-brand-saffron transition-all duration-200 relative group py-2">
+                        Performance
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-saffron transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#partners" class="hover:text-brand-silverBright transition-all duration-200 relative group py-2">
+                        Alliance
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
 
-  <!-- Hero Section -->
-  <header class="relative overflow-hidden border-b border-slate-800/80 py-24 lg:py-32 grid-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="max-w-3xl">
-        
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-400 mb-6 shadow-inner">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Industrial Commerce & Recovery Network
-        </div>
+                <!-- Action CTAs -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <button onclick="openModal('Enterprise Direct Access')" class="px-5 py-2.5 rounded-xl text-xs font-mono font-bold tracking-widest uppercase border border-white/15 text-brand-silverBright hover:text-white bg-white/5 hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
+                        Client Node
+                    </button>
+                    <button onclick="openModal('IND-VIA Pilot Deployment Protocol')" class="relative group overflow-hidden px-6 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-black bg-gradient-to-r from-brand-saffron via-amber-400 to-brand-emerald shadow-neon-dual transition-all duration-300 hover:scale-[1.03] active:scale-95">
+                        <span class="relative z-10 flex items-center gap-2 font-display">
+                            Deploy Node <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </button>
+                </div>
 
-        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
-          Verified. Integrated. <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-amber-400">Assured.</span>
-        </h1>
-
-        <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal mb-8">
-          IND-VIA is building a managed commercial network linking material discovery, pre-dispatch NABL assays, telematics logistics, and statutory escrow settlement for industrial manufacturing supply chains.
-        </p>
-
-        <!-- Compliance & Regulatory Tags -->
-        <div class="flex flex-wrap gap-2.5 mb-10 text-xs font-mono text-slate-400">
-          <span class="px-3 py-1 rounded-md bg-slate-900/90 border border-slate-800 text-slate-300">CGST Sec 51 (2% TDS)</span>
-          <span class="px-3 py-1 rounded-md bg-slate-900/90 border border-slate-800 text-slate-300">Sec 9(3) RCM Compliance</span>
-          <span class="px-3 py-1 rounded-md bg-slate-900/90 border border-slate-800 text-slate-300">MSMED Sec 43B(h) Audit Shield</span>
-          <span class="px-3 py-1 rounded-md bg-slate-900/90 border border-slate-800 text-emerald-400">T+1 Day Settlement</span>
-        </div>
-
-        <div class="flex flex-wrap gap-4">
-          <a href="#lifecycle" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm tracking-wide transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-2">
-            <span>Explore Transaction Protocol</span>
-            <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
-          </a>
-          <a href="#contact" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-all border border-slate-800 flex items-center gap-2">
-            <i data-lucide="send" class="w-4 h-4 text-emerald-400"></i>
-            <span>Submit Scrap Lots</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Problem & Structural Value Architecture -->
-  <section id="overview" class="py-24 border-b border-slate-800 bg-[#030712]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">Institutional Blueprint</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">Eliminating Structural Market Failures in Secondary Industrial Flows</h2>
-        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-          Industrial businesses generate millions of tonnes of prime secondary off-cuts and recoverable inventory. Traditional disposition relies on opaque intermediary cartels, causing cash deductions, quality rejections, and GST liabilities.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-emerald-950/70 border border-emerald-800/60 flex items-center justify-center text-emerald-400 mb-5">
-            <i data-lucide="eye-off" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Price & Discovery Leakage</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Informal offline cartels cause realized salvage yields to languish 15% to 35% below index clearing rates.
-          </p>
-          <div class="text-[11px] font-mono text-emerald-400 bg-emerald-950/40 p-2 rounded border border-emerald-900/40">
-            Solution: Algorithmic Match to Verified Melters
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-amber-950/70 border border-amber-800/60 flex items-center justify-center text-amber-400 mb-5">
-            <i data-lucide="scale" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Weighbridge & Chemistry Tampering</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Water-tank dumping, fake tares, and hidden dirt cause an average 6% to 10% load dispute rate.
-          </p>
-          <div class="text-[11px] font-mono text-amber-400 bg-amber-950/40 p-2 rounded border border-amber-900/40">
-            Solution: Dual-Tare OCR & NABL Assays
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-blue-950/70 border border-blue-800/60 flex items-center justify-center text-blue-400 mb-5">
-            <i data-lucide="file-check-2" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Statutory Tax & Audit Exposure</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Scrap RCM Section 9(3), 2% TDS on B2B metal trades, and Section 43B(h) penalize un-reconciled supply chains.
-          </p>
-          <div class="text-[11px] font-mono text-blue-400 bg-blue-950/40 p-2 rounded border border-blue-900/40">
-            Solution: Automated GSTR-2B & E-Way Linkage
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-purple-950/70 border border-purple-800/60 flex items-center justify-center text-purple-400 mb-5">
-            <i data-lucide="lock" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Working Capital Lockups</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Open credit terms push DSOs to 45–60 days, risking payment defaults from localized middle-men.
-          </p>
-          <div class="text-[11px] font-mono text-purple-400 bg-purple-950/40 p-2 rounded border border-purple-900/40">
-            Solution: Escrow-Led Milestone Payouts (T+1)
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Core Capabilities Section -->
-  <section id="capabilities" class="py-24 border-b border-slate-800 bg-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="max-w-3xl mb-16">
-        <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">What We Connect</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">The Connected Industrial Network Layer</h2>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          IND-VIA operates as an asset-light transaction orchestrator. We coordinate every node from plant scrap generation to destination furnace induction without absorbing inventory balance-sheet risk.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <div class="p-8 rounded-2xl bg-[#0B1120] border border-slate-800">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-10 h-10 rounded-lg bg-emerald-950 border border-emerald-800 flex items-center justify-center text-emerald-400">
-              <i data-lucide="radar" class="w-5 h-5"></i>
+                <!-- Mobile Hamburger Toggle -->
+                <button id="mobile-toggle" aria-label="Toggle Menu" class="lg:hidden p-2 text-brand-silverBright hover:text-brand-saffron focus:outline-none">
+                    <i class="fa-solid fa-bars-staggered text-xl"></i>
+                </button>
             </div>
-            <h3 class="text-lg font-bold text-white">1. Material Discovery</h3>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Connecting registered generators (Tier-1 auto component stampers, forging plants, heavy engineering) with high-capacity induction furnaces and secondary rolling mills.
-          </p>
-          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800/80 pt-4 font-mono">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Prime Busheling & CRCA Scrap</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Turning & Heavy Melting Scrap (HMS 1/2)</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> High-Grade Non-Ferrous (Cu, Al, Brass)</li>
-          </ul>
-        </div>
 
-        <div class="p-8 rounded-2xl bg-[#0B1120] border border-slate-800">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-10 h-10 rounded-lg bg-emerald-950 border border-emerald-800 flex items-center justify-center text-emerald-400">
-              <i data-lucide="flask-conical" class="w-5 h-5"></i>
+            <!-- Mobile Dropdown Navigation -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-3 p-6 rounded-2xl bg-brand-carbon/95 backdrop-blur-2xl border border-white/15 shadow-2xl flex-col gap-4">
+                <a href="#vision" class="text-base font-semibold py-2 text-white hover:text-brand-saffron border-b border-white/5 mobile-nav-item">Founder's Vision</a>
+                <a href="#ecosystem" class="text-base font-semibold py-2 text-white hover:text-brand-silverBright border-b border-white/5 mobile-nav-item">Core Ecosystem</a>
+                <a href="#simulator" class="text-base font-semibold py-2 text-white hover:text-brand-emerald border-b border-white/5 mobile-nav-item">Live Architecture</a>
+                <a href="#benchmarks" class="text-base font-semibold py-2 text-white hover:text-brand-saffron border-b border-white/5 mobile-nav-item">Performance</a>
+                <a href="#partners" class="text-base font-semibold py-2 text-white hover:text-brand-silverBright border-b border-white/5 mobile-nav-item">Global Alliance</a>
+                <div class="pt-2 flex flex-col gap-3">
+                    <button onclick="openModal('Enterprise Direct Access')" class="w-full py-3 rounded-xl text-xs font-mono font-bold tracking-widest uppercase border border-white/15 text-white bg-white/5">Client Node</button>
+                    <button onclick="openModal('IND-VIA Pilot Deployment Protocol')" class="w-full py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gradient-to-r from-brand-saffron to-brand-emerald font-display shadow-neon-saffron">Deploy Node</button>
+                </div>
             </div>
-            <h3 class="text-lg font-bold text-white">2. Quality & Inspection</h3>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Eliminating gate rejection risks through independent NABL-accredited technical assays and physical sample retention before transit begins.
-          </p>
-          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800/80 pt-4 font-mono">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Portable XRF On-Site Assays</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Tramp Element Caps (Cu &le; 0.18%, P &le; 0.04%)</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Tamper-Evident Referee Sample Custody</li>
-          </ul>
         </div>
+    </header>
 
-        <div class="p-8 rounded-2xl bg-[#0B1120] border border-slate-800">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-10 h-10 rounded-lg bg-emerald-950 border border-emerald-800 flex items-center justify-center text-emerald-400">
-              <i data-lucide="truck" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white">3. Logistics Coordination</h3>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Vetted transporter allocation integrated with automated Vahan vehicle verification, GPS milestone tracking, and e-way bill generation.
-          </p>
-          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800/80 pt-4 font-mono">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 18-Hour Truck Placement SLA</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Mandatory Double-Tare Weighing</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Optical OCR Weighbridge Slips</li>
-          </ul>
-        </div>
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="relative z-10 pt-28 sm:pt-36">
 
-      </div>
-    </div>
-  </section>
+        <!-- ================= HERO SECTION ================= -->
+        <section id="hero" class="relative min-h-[92vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+            <div class="max-w-6xl mx-auto w-full text-center flex flex-col items-center">
 
-  <!-- Interactive 6-Stage Transaction Lifecycle Simulator -->
-  <section id="lifecycle" class="py-24 border-b border-slate-800 bg-[#030712]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">System Protocol</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">The 6-Stage Managed Transaction Lifecycle</h2>
-        <p class="text-slate-400 text-sm">
-          Click on any stage below to inspect how IND-VIA orchestrates physical verification, tax custody, and automated settlement across a standard 30 MT batch.
-        </p>
-      </div>
+                <!-- Sovereign Status Pill -->
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/15 bg-brand-surface/70 backdrop-blur-md mb-8 shadow-titanium-card animate-pulse">
+                    <span class="flex h-2.5 w-2.5 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-emerald opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-emerald"></span>
+                    </span>
+                    <span class="text-xs font-mono font-bold tracking-widest uppercase text-brand-silverBright">
+                        IND-VIA Core v5.2 // Sovereign Titanium Infrastructure
+                    </span>
+                    <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-brand-saffron/20 text-brand-saffron border border-brand-saffron/40">ONLINE</span>
+                </div>
 
-      <!-- Stage Buttons -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mb-8">
-        <button onclick="setStage(1)" id="btn-stage-1" class="stage-btn p-3.5 rounded-xl border border-emerald-500 bg-slate-900 text-left transition-all">
-          <p class="text-[10px] font-mono text-emerald-400">DAY 0</p>
-          <p class="text-xs font-bold text-white">1. Listing & Assay</p>
-        </button>
-        <button onclick="setStage(2)" id="btn-stage-2" class="stage-btn p-3.5 rounded-xl border border-slate-800 bg-slate-950 text-left transition-all">
-          <p class="text-[10px] font-mono text-slate-500">DAY 1</p>
-          <p class="text-xs font-bold text-slate-300">2. Escrow Funding</p>
-        </button>
-        <button onclick="setStage(3)" id="btn-stage-3" class="stage-btn p-3.5 rounded-xl border border-slate-800 bg-slate-950 text-left transition-all">
-          <p class="text-[10px] font-mono text-slate-500">DAY 2 (AM)</p>
-          <p class="text-xs font-bold text-slate-300">3. NABL Sample</p>
-        </button>
-        <button onclick="setStage(4)" id="btn-stage-4" class="stage-btn p-3.5 rounded-xl border border-slate-800 bg-slate-950 text-left transition-all">
-          <p class="text-[10px] font-mono text-slate-500">DAY 2 (PM)</p>
-          <p class="text-xs font-bold text-slate-300">4. Weigh & E-Way</p>
-        </button>
-        <button onclick="setStage(5)" id="btn-stage-5" class="stage-btn p-3.5 rounded-xl border border-slate-800 bg-slate-950 text-left transition-all">
-          <p class="text-[10px] font-mono text-slate-500">DAY 2 (EV)</p>
-          <p class="text-xs font-bold text-slate-300">5. GRN Gate Check</p>
-        </button>
-        <button onclick="setStage(6)" id="btn-stage-6" class="stage-btn p-3.5 rounded-xl border border-slate-800 bg-slate-950 text-left transition-all">
-          <p class="text-[10px] font-mono text-slate-500">DAY 3</p>
-          <p class="text-xs font-bold text-slate-300">6. Reconciliation</p>
-        </button>
-      </div>
+                <!-- Hero Heading with 3D Titanium & Saffron/Emerald Gradients -->
+                <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tight leading-[1.05] max-w-5xl">
+                    <span class="text-chrome">SOVEREIGN TECH.</span><br>
+                    <span class="text-saffron-gradient">UNRIVALED SPEED.</span><br class="hidden sm:block">
+                    <span class="text-emerald-gradient">TITANIUM INTELLIGENCE.</span>
+                </h1>
 
-      <!-- Stage Detail Display Card -->
-      <div id="stage-card" class="p-8 rounded-3xl bg-[#0B1120] border border-slate-800 shadow-2xl grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800 text-[11px] font-mono text-emerald-400 mb-4" id="stage-badge">
-            PHASE 1: LISTING & DIGITAL VERIFICATION
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3" id="stage-title">Generator Logs Clean Secondary Lot</h3>
-          <p class="text-sm text-slate-300 leading-relaxed mb-6" id="stage-desc">
-            The enterprise generator (e.g., auto stamping facility in Chakan) uploads past spectrographic assays, source photos, and estimated tonnage (30 MT Busheling scrap). The platform algorithmic engine verifies active GSTIN status and opens bidding to pre-qualified buyers.
-          </p>
+                <!-- Sub-Headline -->
+                <p class="mt-8 text-base sm:text-lg md:text-xl text-brand-silverMid max-w-3xl font-light leading-relaxed">
+                    Spearheaded by <span class="text-white font-semibold">Navneet Tiwari</span>, 
+                    <strong class="text-brand-silverBright font-bold">IND-VIA</strong> engineers industrial-grade neural pipelines, 
+                    quantum-hardened security matrices, and high-frequency edge computation engines engineered for supreme autonomy.
+                </p>
 
-          <div class="grid grid-cols-2 gap
+                <!-- Dual Action Buttons -->
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto">
+                    <button onclick="openModal('Launch Sovereign Infrastructure')" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold font-display text-sm uppercase tracking-wider text-black bg-gradient-to-r from-brand-saffron via-amber-400 to-brand-emerald shadow-neon-dual hover:shadow-neon-saffron transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
+                        <span>Initialize Protocol</span>
+                        <i class="fa-solid fa-bolt-lightning text-xs"></i>
+                    </button>
+                    <a href="#simulator" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold font-display text-sm uppercase tracking-wider text-white border border-white/20 bg-brand-surface/80 hover:bg-white/10 hover:border-brand-emerald/50 shadow-titanium-card transition-all duration-300 flex items-center justify-center gap-3 backdrop-blur-md">
+                        <i class="fa-solid fa-terminal text-brand-emerald text-sm"></i>
+                        <span>Live Architecture Sim</span>
+                    </a>
+                </div>
+
+                <!-- 3D Interactive Telemetry Cockpit Preview -->
+                <div class="mt-16 sm:mt-20 w-full max-w-5xl metallic-glass-card p-4 sm:p-6 shadow-2xl relative text-left group">
+                    <div class="p-6 rounded-xl bg-brand-carbon/90 border border-white/5 relative overflow-hidden">
+                        
+                        <!-- Top HUD Bar -->
+                        <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-white/10">
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full bg-brand-saffron animate-pulse"></span>
+                                <span class="w-3 h-3 rounded-full bg-brand-silverMid"></span>
+                                <span class="w-3 h-3 rounded-full bg-brand-emerald"></span>
+                                <span class="ml-2 font-mono text-xs text-brand-silverMuted tracking-wider">IND-VIA://AUTONOMOUS_MATRIX_v5.2</span>
+                            </div>
+                            <div class="flex items-center gap-4 font-mono text-xs">
+                                <span class="text-brand-saffron flex items-center gap-1.5"><i class="fa-solid fa-satellite-dish"></i> 142 Nodes Active</span>
+                                <span class="text-brand-emerald flex items-center gap-1.5"><i class="fa-solid fa-shield-check"></i> Zero-Loss Shield</span>
+                            </div>
+                        </div>
+
+                        <!-- 3 Stat Modules with Live Simulated Metrics -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+                            
+                            <!-- Stat 1 -->
+                            <div class="p-4 rounded-xl bg-brand-surface/60 border border-brand-saffron/20 relative overflow-hidden">
+                                <div class="text-[11px] font-mono text-brand-silverMuted uppercase tracking-wider">Telemetry Ingestion Velocity</div>
+                                <div class="text-2xl sm:text-3xl font-extrabold font-display text-saffron-gradient mt-1" id="dynamic-throughput">18.42 TB/s</div>
+                                <div class="mt-2 text-xs text-brand-silverMid flex justify-between">
+                                    <span>Cluster Saturation</span>
+                                    <span class="font-mono text-brand-saffron">78.4%</span>
+                                </div>
+                                <div class="w-full bg-black/60 h-1.5 rounded-fu
