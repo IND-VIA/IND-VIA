@@ -4,23 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IND-VIA | Next-Gen Sovereign Intelligence & Cyber-Physical Infrastructure</title>
+    <title>IND-VIA | Industrial Commerce & Recovery Network</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome 6 Pro Icons -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Premium Fonts: Syne (Ultra-futuristic display) & Plus Jakarta Sans -->
+    <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Three.js for true 3D Interactive Depth -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <!-- Custom Tailwind Configuration aligned with Logo Palette -->
+    <!-- Custom Tailwind Configuration aligned with IND-VIA Logo -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -28,35 +25,34 @@
                 extend: {
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['Syne', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
-                        brand: {
-                            obsidian: '#040507',
-                            carbon: '#090C11',
-                            surface: '#0F141D',
-                            card: '#131A26',
-                            border: '#1E293B',
-                            // Fiery Saffron / Metallic Orange (Left Logo Facet)
-                            saffron: '#FF6B00',
-                            saffronNeon: '#FF8A00',
-                            saffronGlow: 'rgba(255, 107, 0, 0.45)',
-                            // Brushed Titanium / Chrome Silver (Middle Letters)
-                            silverBright: '#FFFFFF',
+                        ind: {
+                            obsidian: '#07090D',
+                            titanium: '#0E131B',
+                            slate: '#161E2B',
+                            surface: '#1B2433',
+                            border: '#273447',
+                            // Fiery Metallic Saffron (Left IND Block Accent)
+                            saffron: '#FF7700',
+                            saffronLight: '#FFA033',
+                            saffronGlow: 'rgba(255, 119, 0, 0.35)',
+                            // Chrome / Brushed Silver
+                            silverWhite: '#F8FAFC',
                             silverMid: '#CBD5E1',
                             silverMuted: '#64748B',
-                            // Emerald Green / Cyber Blade (Right Accent & Slash)
+                            // Circular Recovery Emerald (Right VIA Blade Accent)
                             emerald: '#00E676',
-                            emeraldDeep: '#00B050',
-                            emeraldGlow: 'rgba(0, 230, 118, 0.45)'
+                            emeraldDeep: '#00A34D',
+                            emeraldGlow: 'rgba(0, 230, 118, 0.35)'
                         }
                     },
                     boxShadow: {
-                        'neon-saffron': '0 0 35px -5px rgba(255, 107, 0, 0.55)',
-                        'neon-emerald': '0 0 35px -5px rgba(0, 230, 118, 0.55)',
-                        'neon-dual': '0 0 45px -8px rgba(255, 107, 0, 0.35), 0 0 45px -8px rgba(0, 230, 118, 0.35)',
-                        'titanium-card': '0 25px 60px -15px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.12)'
+                        'saffron-glow': '0 0 35px -5px rgba(255, 119, 0, 0.45)',
+                        'emerald-glow': '0 0 35px -5px rgba(0, 230, 118, 0.45)',
+                        'metallic-card': '0 20px 45px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12)'
                     }
                 }
             }
@@ -64,270 +60,1028 @@
     </script>
 
     <style>
-        /* Smooth base behaviors */
-        * {
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-        }
+        * { box-sizing: border-box; }
+        body { background-color: #07090D; color: #CBD5E1; overflow-x: hidden; }
 
-        body {
-            background-color: #040507;
-            overflow-x: hidden;
-        }
-
-        /* Custom Scrollbar with metallic orange/green accents */
-        ::-webkit-scrollbar {
-            width: 7px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #040507;
-        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #07090D; }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #FF6B00 0%, #1E293B 50%, #00E676 100%);
-            border-radius: 999px;
+            background: linear-gradient(180deg, #FF7700 0%, #273447 50%, #00E676 100%);
+            border-radius: 9999px;
         }
 
-        /* 3D Brushed Chrome Text Fill */
-        .text-chrome {
-            background: linear-gradient(145deg, #FFFFFF 0%, #E2E8F0 25%, #94A3B8 50%, #FFFFFF 75%, #475569 100%);
+        /* 3D Brushed Metallic Chrome Gradient */
+        .text-metallic-chrome {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 25%, #94A3B8 60%, #FFFFFF 85%, #64748B 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
         }
 
-        /* Saffron Radiant Fire Text */
-        .text-saffron-gradient {
-            background: linear-gradient(135deg, #FFF3E0 0%, #FFA726 30%, #FF6B00 80%, #D84315 100%);
+        /* Saffron Gradient */
+        .text-saffron-glow {
+            background: linear-gradient(135deg, #FFE0B2 0%, #FF9100 50%, #FF6D00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 14px rgba(255, 107, 0, 0.4));
         }
 
-        /* Emerald Cyber Blade Text */
-        .text-emerald-gradient {
-            background: linear-gradient(135deg, #E8F5E9 0%, #69F0AE 35%, #00E676 80%, #00897B 100%);
+        /* Recovery Emerald Gradient */
+        .text-emerald-flow {
+            background: linear-gradient(135deg, #B9F6CA 0%, #00E676 50%, #00B050 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 14px rgba(0, 230, 118, 0.4));
         }
 
-        /* 3D Metallic Card Border with dynamic hover response */
-        .metallic-glass-card {
-            position: relative;
-            background: linear-gradient(165deg, rgba(19, 26, 38, 0.85) 0%, rgba(9, 12, 17, 0.95) 100%);
-            backdrop-filter: blur(24px);
-            border-radius: 1.25rem;
+        /* Metallic Glass Card with Edge Sheen */
+        .glass-panel {
+            background: linear-gradient(145deg, rgba(22, 30, 43, 0.85) 0%, rgba(14, 19, 27, 0.95) 100%);
+            backdrop-filter: blur(18px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-            transform-style: preserve-3d;
-        }
-
-        .metallic-glass-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
             border-radius: 1.25rem;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(255, 107, 0, 0.5) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(0, 230, 118, 0.5) 100%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            opacity: 0.6;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            position: relative;
+        }
+        .glass-panel:hover {
+            border-color: rgba(255, 119, 0, 0.4);
+            transform: translateY(-4px);
         }
 
-        .metallic-glass-card:hover::before {
-            opacity: 1;
-        }
-
-        /* Circuit line dynamic animation */
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 0.3; transform: scaleX(1); }
-            50% { opacity: 0.9; transform: scaleX(1.03); }
-        }
-        .circuit-pulse {
-            animation: pulseGlow 4s ease-in-out infinite;
-        }
-
-        /* Infinite horizontal ticker */
-        @keyframes tickerScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-ticker {
-            display: flex;
-            width: 200%;
-            animation: tickerScroll 24s linear infinite;
-        }
-        .animate-ticker:hover {
-            animation-play-state: paused;
-        }
-
-        /* Subtle mesh background grid */
-        .cyber-grid {
-            background-size: 50px 50px;
+        /* Industrial Grid Background */
+        .industrial-grid {
+            background-size: 40px 40px;
             background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
         }
     </style>
 </head>
-<body class="text-brand-silverMid selection:bg-brand-saffron selection:text-black relative">
+<body class="selection:bg-ind-saffron selection:text-black">
 
-    <!-- WebGL Three.js Ambient 3D Canvas Background -->
-    <div id="canvas-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-70"></div>
-    <div class="fixed inset-0 cyber-grid pointer-events-none z-0"></div>
+    <!-- Interactive Network Graph Canvas Background -->
+    <canvas id="network-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-60"></canvas>
+    <div class="fixed inset-0 industrial-grid pointer-events-none z-0"></div>
 
-    <!-- Top Glow Horizon -->
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-6xl h-44 bg-gradient-to-b from-brand-saffron/15 via-brand-emerald/10 to-transparent blur-3xl pointer-events-none z-0"></div>
+    <!-- Top Radiant Glows -->
+    <div class="fixed -top-40 left-1/4 w-96 h-96 bg-ind-saffron/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+    <div class="fixed -top-40 right-1/4 w-96 h-96 bg-ind-emerald/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
 
     <!-- ================= NAVBAR ================= -->
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3" id="main-header">
+    <header class="fixed top-0 left-0 right-0 z-50 py-3 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="h-20 px-6 sm:px-8 rounded-2xl bg-brand-carbon/80 backdrop-blur-2xl border border-white/10 flex items-center justify-between shadow-2xl relative">
+            <div class="h-20 px-6 sm:px-8 rounded-2xl bg-ind-titanium/85 backdrop-blur-xl border border-white/10 flex items-center justify-between shadow-2xl">
                 
-                <!-- Brand Anchor & High-Def Logo Rendering -->
-                <a href="#hero" class="flex items-center gap-3.5 group">
-                    <div class="relative py-1">
+                <!-- Logo with direct file reading and high-aesthetic fallback -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="relative flex items-center">
+                        <!-- Primary Image File: Logo.png -->
                         <img src="Logo.png" 
-                             alt="IND-VIA" 
-                             id="nav-logo-img"
-                             class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_4px_16px_rgba(255,107,0,0.35)]"
-                             onerror="handleLogoFallback(this)">
+                             alt="IND-VIA Logo" 
+                             id="nav-logo-img" 
+                             class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+                             onerror="displayFallbackLogo(this, 'nav-logo-fallback')">
+                        
+                        <!-- High-definition Inline Fallback Emblem (Active if Logo.png is loading/unlinked) -->
+                        <div id="nav-logo-fallback" class="hidden items-center tracking-tighter font-display text-2xl font-black">
+                            <span class="text-ind-saffron">IND</span>
+                            <span class="text-white mx-0.5">-</span>
+                            <span class="text-ind-silverMid">V</span>
+                            <span class="text-ind-emerald">IA</span>
+                        </div>
                     </div>
+                    <span class="hidden xl:inline-block pl-3 border-l border-white/15 text-[11px] font-mono uppercase tracking-widest text-ind-silverMuted">
+                        Industrial Commerce & Recovery
+                    </span>
                 </a>
 
-                <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-brand-silverMid">
-                    <a href="#vision" class="hover:text-brand-saffron transition-all duration-200 relative group py-2">
-                        Founder's Vision
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-saffron transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#ecosystem" class="hover:text-brand-silverBright transition-all duration-200 relative group py-2">
-                        Core Ecosystem
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-silverBright transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#simulator" class="hover:text-brand-emerald transition-all duration-200 relative group py-2">
-                        Live Architecture
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-emerald transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#benchmarks" class="hover:text-brand-saffron transition-all duration-200 relative group py-2">
-                        Performance
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-saffron transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#partners" class="hover:text-brand-silverBright transition-all duration-200 relative group py-2">
-                        Alliance
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                    </a>
+                <!-- Nav Links -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                    <a href="#what-we-connect" class="text-ind-silverMid hover:text-ind-saffron transition-colors">What We Connect</a>
+                    <a href="#workflow" class="text-ind-silverMid hover:text-white transition-colors">Commercial Workflow</a>
+                    <a href="#calculator" class="text-ind-silverMid hover:text-ind-emerald transition-colors">Value Calculator</a>
+                    <a href="#approach" class="text-ind-silverMid hover:text-ind-saffron transition-colors">Our Approach</a>
+                    <a href="#founder" class="text-ind-silverMid hover:text-white transition-colors">Founder's Vision</a>
                 </nav>
 
                 <!-- Action CTAs -->
-                <div class="hidden sm:flex items-center gap-4">
-                    <button onclick="openModal('Enterprise Direct Access')" class="px-5 py-2.5 rounded-xl text-xs font-mono font-bold tracking-widest uppercase border border-white/15 text-brand-silverBright hover:text-white bg-white/5 hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
-                        Client Node
+                <div class="hidden md:flex items-center gap-4">
+                    <button onclick="openPortalModal('Supplier Onboarding')" class="px-4 py-2.5 rounded-xl text-xs font-mono font-bold tracking-wider uppercase border border-white/15 text-ind-silverMid hover:text-white bg-white/5 hover:bg-white/10 transition-all">
+                        List Secondary Material
                     </button>
-                    <button onclick="openModal('IND-VIA Pilot Deployment Protocol')" class="relative group overflow-hidden px-6 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-black bg-gradient-to-r from-brand-saffron via-amber-400 to-brand-emerald shadow-neon-dual transition-all duration-300 hover:scale-[1.03] active:scale-95">
-                        <span class="relative z-10 flex items-center gap-2 font-display">
-                            Deploy Node <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
-                        </span>
+                    <button onclick="openPortalModal('Verified Buyer Network')" class="px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider font-display text-black bg-gradient-to-r from-ind-saffron via-amber-400 to-ind-emerald shadow-saffron-glow hover:scale-105 active:scale-95 transition-all">
+                        Join Network
                     </button>
                 </div>
 
                 <!-- Mobile Hamburger Toggle -->
-                <button id="mobile-toggle" aria-label="Toggle Menu" class="lg:hidden p-2 text-brand-silverBright hover:text-brand-saffron focus:outline-none">
-                    <i class="fa-solid fa-bars-staggered text-xl"></i>
+                <button id="mobile-menu-btn" class="lg:hidden text-ind-silverMid hover:text-white p-2 text-xl" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars-staggered"></i>
                 </button>
             </div>
 
-            <!-- Mobile Dropdown Navigation -->
-            <div id="mobile-menu" class="hidden lg:hidden mt-3 p-6 rounded-2xl bg-brand-carbon/95 backdrop-blur-2xl border border-white/15 shadow-2xl flex-col gap-4">
-                <a href="#vision" class="text-base font-semibold py-2 text-white hover:text-brand-saffron border-b border-white/5 mobile-nav-item">Founder's Vision</a>
-                <a href="#ecosystem" class="text-base font-semibold py-2 text-white hover:text-brand-silverBright border-b border-white/5 mobile-nav-item">Core Ecosystem</a>
-                <a href="#simulator" class="text-base font-semibold py-2 text-white hover:text-brand-emerald border-b border-white/5 mobile-nav-item">Live Architecture</a>
-                <a href="#benchmarks" class="text-base font-semibold py-2 text-white hover:text-brand-saffron border-b border-white/5 mobile-nav-item">Performance</a>
-                <a href="#partners" class="text-base font-semibold py-2 text-white hover:text-brand-silverBright border-b border-white/5 mobile-nav-item">Global Alliance</a>
-                <div class="pt-2 flex flex-col gap-3">
-                    <button onclick="openModal('Enterprise Direct Access')" class="w-full py-3 rounded-xl text-xs font-mono font-bold tracking-widest uppercase border border-white/15 text-white bg-white/5">Client Node</button>
-                    <button onclick="openModal('IND-VIA Pilot Deployment Protocol')" class="w-full py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gradient-to-r from-brand-saffron to-brand-emerald font-display shadow-neon-saffron">Deploy Node</button>
+            <!-- Mobile Drawer -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-2 p-6 rounded-2xl bg-ind-titanium/95 backdrop-blur-2xl border border-white/10 flex-col gap-4 text-sm font-medium shadow-2xl">
+                <a href="#what-we-connect" class="py-2 text-white border-b border-white/5 mobile-link">What We Connect</a>
+                <a href="#workflow" class="py-2 text-white border-b border-white/5 mobile-link">Commercial Workflow</a>
+                <a href="#calculator" class="py-2 text-white border-b border-white/5 mobile-link">Recovery Value Calculator</a>
+                <a href="#approach" class="py-2 text-white border-b border-white/5 mobile-link">Our Approach</a>
+                <a href="#founder" class="py-2 text-white border-b border-white/5 mobile-link">Founder's Vision</a>
+                <div class="pt-2 flex flex-col gap-2">
+                    <button onclick="openPortalModal('Supplier Onboarding')" class="w-full py-3 rounded-xl text-xs font-mono uppercase border border-white/10 text-white bg-white/5">List Secondary Material</button>
+                    <button onclick="openPortalModal('Verified Buyer Network')" class="w-full py-3 rounded-xl text-xs font-bold uppercase text-black bg-gradient-to-r from-ind-saffron to-ind-emerald">Join Network</button>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- ================= MAIN CONTENT ================= -->
-    <main class="relative z-10 pt-28 sm:pt-36">
+    <main class="relative z-10 pt-32 sm:pt-40">
 
         <!-- ================= HERO SECTION ================= -->
-        <section id="hero" class="relative min-h-[92vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
-            <div class="max-w-6xl mx-auto w-full text-center flex flex-col items-center">
+        <section id="hero" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+            
+            <!-- Category Tag -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/15 bg-ind-titanium/80 backdrop-blur-md mb-8">
+                <span class="w-2.5 h-2.5 rounded-full bg-ind-emerald animate-pulse"></span>
+                <span class="text-xs font-mono font-bold tracking-widest uppercase text-ind-silverWhite">
+                    Managed Industrial Commerce & Resource Recovery
+                </span>
+            </div>
 
-                <!-- Sovereign Status Pill -->
-                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/15 bg-brand-surface/70 backdrop-blur-md mb-8 shadow-titanium-card animate-pulse">
-                    <span class="flex h-2.5 w-2.5 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-emerald opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-emerald"></span>
-                    </span>
-                    <span class="text-xs font-mono font-bold tracking-widest uppercase text-brand-silverBright">
-                        IND-VIA Core v5.2 // Sovereign Titanium Infrastructure
-                    </span>
-                    <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-brand-saffron/20 text-brand-saffron border border-brand-saffron/40">ONLINE</span>
+            <!-- Main Title with Logo Metallic Harmony -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold font-display tracking-tight leading-[1.08] max-w-5xl mx-auto">
+                <span class="text-metallic-chrome">Reclaiming Value From</span><br>
+                <span class="text-saffron-glow">Secondary Materials & Off-Cuts</span><br class="hidden sm:inline">
+                <span class="text-emerald-flow">Through a Connected Network.</span>
+            </h1>
+
+            <!-- Comprehensive Context Description -->
+            <p class="mt-8 text-base sm:text-lg md:text-xl text-ind-silverMid max-w-3xl mx-auto font-light leading-relaxed">
+                Industrial businesses generate valuable secondary materials, production off-cuts, and recoverable inventory. 
+                Yet identifying the right buyers, verifying material quality, coordinating logistics, and reconciling transactions involves fragmented processes and multiple intermediaries.
+            </p>
+
+            <div class="mt-4 font-mono text-sm tracking-wide text-ind-saffron font-semibold">
+                IND-VIA connects these activities through a managed, technology-enabled commercial network.
+            </div>
+
+            <!-- Credo Badges -->
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs font-mono font-bold uppercase tracking-widest">
+                <span class="px-4 py-2 rounded-xl bg-ind-surface border border-ind-saffron/40 text-ind-saffron flex items-center gap-2">
+                    <i class="fa-solid fa-badge-check"></i> Verified
+                </span>
+                <span class="px-4 py-2 rounded-xl bg-ind-surface border border-white/20 text-white flex items-center gap-2">
+                    <i class="fa-solid fa-arrows-split-up-and-left"></i> Integrated
+                </span>
+                <span class="px-4 py-2 rounded-xl bg-ind-surface border border-ind-emerald/40 text-ind-emerald flex items-center gap-2">
+                    <i class="fa-solid fa-shield-check"></i> Assured
+                </span>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
+                <button onclick="openPortalModal('Industrial Material Generator Enrollment')" class="w-full sm:w-auto px-8 py-4 rounded-xl text-black font-extrabold text-sm uppercase tracking-wider font-display bg-gradient-to-r from-ind-saffron via-amber-400 to-ind-emerald shadow-saffron-glow hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3">
+                    <span>Enlist Plant Inventory</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+                <a href="#workflow" class="w-full sm:w-auto px-8 py-4 rounded-xl text-white font-semibold text-sm uppercase tracking-wider border border-white/15 bg-ind-titanium/80 hover:bg-white/10 hover:border-ind-emerald transition-all flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-diagram-project text-ind-emerald"></i>
+                    <span>Explore Network Mechanics</span>
+                </a>
+            </div>
+
+            <!-- Quick Telemetry Strip -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                <div class="p-5 rounded-2xl bg-ind-titanium/60 border border-white/5">
+                    <div class="text-2xl font-bold font-display text-white">Asset-Light</div>
+                    <div class="text-xs text-ind-silverMuted mt-1">Managed Network Model</div>
                 </div>
+                <div class="p-5 rounded-2xl bg-ind-titanium/60 border border-white/5">
+                    <div class="text-2xl font-bold font-display text-ind-saffron">Pre-Dispatch</div>
+                    <div class="text-xs text-ind-silverMuted mt-1">Certified Inspection</div>
+                </div>
+                <div class="p-5 rounded-2xl bg-ind-titanium/60 border border-white/5">
+                    <div class="text-2xl font-bold font-display text-white">Full Trace</div>
+                    <div class="text-xs text-ind-silverMuted mt-1">Integrated PO to Invoicing</div>
+                </div>
+                <div class="p-5 rounded-2xl bg-ind-titanium/60 border border-white/5">
+                    <div class="text-2xl font-bold font-display text-ind-emerald">100% Assured</div>
+                    <div class="text-xs text-ind-silverMuted mt-1">Dispute Resolution SLAs</div>
+                </div>
+            </div>
+        </section>
 
-                <!-- Hero Heading with 3D Titanium & Saffron/Emerald Gradients -->
-                <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tight leading-[1.05] max-w-5xl">
-                    <span class="text-chrome">SOVEREIGN TECH.</span><br>
-                    <span class="text-saffron-gradient">UNRIVALED SPEED.</span><br class="hidden sm:block">
-                    <span class="text-emerald-gradient">TITANIUM INTELLIGENCE.</span>
-                </h1>
-
-                <!-- Sub-Headline -->
-                <p class="mt-8 text-base sm:text-lg md:text-xl text-brand-silverMid max-w-3xl font-light leading-relaxed">
-                    Spearheaded by <span class="text-white font-semibold">Navneet Tiwari</span>, 
-                    <strong class="text-brand-silverBright font-bold">IND-VIA</strong> engineers industrial-grade neural pipelines, 
-                    quantum-hardened security matrices, and high-frequency edge computation engines engineered for supreme autonomy.
+        <!-- ================= WHAT WE AIM TO CONNECT (5 PILLARS) ================= -->
+        <section id="what-we-connect" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-mono uppercase tracking-widest text-ind-saffron border border-ind-saffron/30 px-3 py-1 rounded-full">
+                    Unified Commerce Architecture
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-white mt-4">
+                    What We Aim to Connect
+                </h2>
+                <p class="mt-3 text-ind-silverMid text-base sm:text-lg">
+                    Transforming fragmented transactions into a synchronized, five-stage commercial continuum.
                 </p>
+            </div>
 
-                <!-- Dual Action Buttons -->
-                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto">
-                    <button onclick="openModal('Launch Sovereign Infrastructure')" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold font-display text-sm uppercase tracking-wider text-black bg-gradient-to-r from-brand-saffron via-amber-400 to-brand-emerald shadow-neon-dual hover:shadow-neon-saffron transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
-                        <span>Initialize Protocol</span>
-                        <i class="fa-solid fa-bolt-lightning text-xs"></i>
-                    </button>
-                    <a href="#simulator" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold font-display text-sm uppercase tracking-wider text-white border border-white/20 bg-brand-surface/80 hover:bg-white/10 hover:border-brand-emerald/50 shadow-titanium-card transition-all duration-300 flex items-center justify-center gap-3 backdrop-blur-md">
-                        <i class="fa-solid fa-terminal text-brand-emerald text-sm"></i>
-                        <span>Live Architecture Sim</span>
-                    </a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Pillar 1 -->
+                <div class="glass-panel p-8 group">
+                    <div class="w-12 h-12 rounded-xl bg-ind-saffron/10 border border-ind-saffron/30 flex items-center justify-center text-ind-saffron text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-radar"></i>
+                    </div>
+                    <span class="text-xs font-mono uppercase text-ind-saffron">Pillar 01</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-1">Material Discovery</h3>
+                    <p class="mt-3 text-sm text-ind-silverMuted leading-relaxed">
+                        Connecting industrial material generators directly with relevant industrial buyers. Eliminating multi-layer broker markups while matching precise alloy, grade, and recovery specifications.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-ind-silverMid">
+                        <span>Direct Buyer Matching</span>
+                        <i class="fa-solid fa-check text-ind-saffron"></i>
+                    </div>
                 </div>
 
-                <!-- 3D Interactive Telemetry Cockpit Preview -->
-                <div class="mt-16 sm:mt-20 w-full max-w-5xl metallic-glass-card p-4 sm:p-6 shadow-2xl relative text-left group">
-                    <div class="p-6 rounded-xl bg-brand-carbon/90 border border-white/5 relative overflow-hidden">
+                <!-- Pillar 2 -->
+                <div class="glass-panel p-8 group">
+                    <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <span class="text-xs font-mono uppercase text-white">Pillar 02</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-1">Quality Verification</h3>
+                    <p class="mt-3 text-sm text-ind-silverMuted leading-relaxed">
+                        Supporting pre-dispatch inspection and comprehensive material documentation. Validating metallurgy, moisture, contamination levels, and physical dimension criteria before transit.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-ind-silverMid">
+                        <span>Pre-Dispatch Reports</span>
+                        <i class="fa-solid fa-check text-white"></i>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="glass-panel p-8 group">
+                    <div class="w-12 h-12 rounded-xl bg-ind-emerald/10 border border-ind-emerald/30 flex items-center justify-center text-ind-emerald text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <span class="text-xs font-mono uppercase text-ind-emerald">Pillar 03</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-1">Logistics Coordination</h3>
+                    <p class="mt-3 text-sm text-ind-silverMuted leading-relaxed">
+                        Connecting material movement with precise operational milestones and delivery requirements. Synchronizing multi-axle freight, weighbridge check-ins, and unloading turnaround windows.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-ind-silverMid">
+                        <span>Milestone Tracking</span>
+                        <i class="fa-solid fa-check text-ind-emerald"></i>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="glass-panel p-8 group">
+                    <div class="w-12 h-12 rounded-xl bg-ind-saffron/10 border border-ind-saffron/30 flex items-center justify-center text-ind-saffron text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <span class="text-xs font-mono uppercase text-ind-saffron">Pillar 04</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-1">Transaction Integration</h3>
+                    <p class="mt-3 text-sm text-ind-silverMuted leading-relaxed">
+                        Seamlessly linking purchase orders, verified delivery records, quality certificates, and tax invoices into an immutable, unified commercial packet.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-ind-silverMid">
+                        <span>Single-Packet Billing</span>
+                        <i class="fa-solid fa-check text-ind-saffron"></i>
+                    </div>
+                </div>
+
+                <!-- Pillar 5 -->
+                <div class="glass-panel p-8 group md:col-span-2 lg:col-span-2">
+                    <div class="w-12 h-12 rounded-xl bg-ind-emerald/10 border border-ind-emerald/30 flex items-center justify-center text-ind-emerald text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <span class="text-xs font-mono uppercase text-ind-emerald">Pillar 05</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-1">Reconciliation & Assurance</h3>
+                    <p class="mt-3 text-sm text-ind-silverMuted leading-relaxed">
+                        Supporting transparent transaction records and structured dispute resolution. Ensuring prompt commercial closure with zero ambiguity in weight receipts, quality grades, or net payment reconciliations.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-ind-silverMid">
+                        <span>Structured Governance SLAs</span>
+                        <i class="fa-solid fa-check text-ind-emerald"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= INTERACTIVE WORKFLOW ENGINE ================= -->
+        <section id="workflow" class="py-24 bg-ind-titanium/70 border-y border-white/10 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <div class="text-xs font-mono uppercase tracking-widest text-ind-emerald mb-2">Operational Simulation</div>
+                        <h2 class="text-3xl sm:text-4xl font-black font-display text-white">The IND-VIA Lifecycle Simulator</h2>
+                        <p class="text-ind-silverMuted text-sm mt-1">Click through each operational phase to view live telemetry and manifest verification.</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 font-mono text-xs px-3 py-1.5 rounded-lg bg-black/60 border border-white/10 text-ind-silverMid">
+                        Network Protocol: <span class="text-ind-saffron font-bold">LIVE STAGE 3/5</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Stage Selector -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-8" id="workflow-tabs">
+                    <button onclick="setWorkflowStage(0)" class="stage-btn active p-4 rounded-xl text-left border border-ind-saffron bg-ind-saffron/10 transition-all" data-index="0">
+                        <div class="text-[10px] font-mono uppercase text-ind-saffron font-bold">Phase 01</div>
+                        <div class="text-sm font-bold text-white mt-1">Discovery</div>
+                    </button>
+                    <button onclick="setWorkflowStage(1)" class="stage-btn p-4 rounded-xl text-left border border-white/10 bg-ind-surface/50 hover:border-white/30 transition-all" data-index="1">
+                        <div class="text-[10px] font-mono uppercase text-ind-silverMuted font-bold">Phase 02</div>
+                        <div class="text-sm font-bold text-white mt-1">Verification</div>
+                    </button>
+                    <button onclick="setWorkflowStage(2)" class="stage-btn p-4 rounded-xl text-left border border-white/10 bg-ind-surface/50 hover:border-white/30 transition-all" data-index="2">
+                        <div class="text-[10px] font-mono uppercase text-ind-silverMuted font-bold">Phase 03</div>
+                        <div class="text-sm font-bold text-white mt-1">Logistics</div>
+                    </button>
+                    <button onclick="setWorkflowStage(3)" class="stage-btn p-4 rounded-xl text-left border border-white/10 bg-ind-surface/50 hover:border-white/30 transition-all" data-index="3">
+                        <div class="text-[10px] font-mono uppercase text-ind-silverMuted font-bold">Phase 04</div>
+                        <div class="text-sm font-bold text-white mt-1">Integration</div>
+                    </button>
+                    <button onclick="setWorkflowStage(4)" class="stage-btn p-4 rounded-xl text-left border border-white/10 bg-ind-surface/50 hover:border-white/30 transition-all" data-index="4">
+                        <div class="text-[10px] font-mono uppercase text-ind-silverMuted font-bold">Phase 05</div>
+                        <div class="text-sm font-bold text-white mt-1">Reconciliation</div>
+                    </button>
+                </div>
+
+                <!-- Active Stage Dynamic Display Panel -->
+                <div class="glass-panel p-6 sm:p-10 border border-white/15">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                         
-                        <!-- Top HUD Bar -->
-                        <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-white/10">
-                            <div class="flex items-center gap-3">
-                                <span class="w-3 h-3 rounded-full bg-brand-saffron animate-pulse"></span>
-                                <span class="w-3 h-3 rounded-full bg-brand-silverMid"></span>
-                                <span class="w-3 h-3 rounded-full bg-brand-emerald"></span>
-                                <span class="ml-2 font-mono text-xs text-brand-silverMuted tracking-wider">IND-VIA://AUTONOMOUS_MATRIX_v5.2</span>
-                            </div>
-                            <div class="flex items-center gap-4 font-mono text-xs">
-                                <span class="text-brand-saffron flex items-center gap-1.5"><i class="fa-solid fa-satellite-dish"></i> 142 Nodes Active</span>
-                                <span class="text-brand-emerald flex items-center gap-1.5"><i class="fa-solid fa-shield-check"></i> Zero-Loss Shield</span>
+                        <!-- Left Details -->
+                        <div class="lg:col-span-6 space-y-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-ind-saffron" id="wf-badge">
+                                Stage 1: Material Discovery
+                            </span>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold font-display text-white" id="wf-title">
+                                Automated Specification Matching & Generator Cataloging
+                            </h3>
+                            <p class="text-ind-silverMid text-sm leading-relaxed" id="wf-desc">
+                                Plants catalog secondary off-cuts, turnings, and end-of-campaign lots. The network matches certified downstream recyclers and remelters without middle-layer broker fragmentation.
+                            </p>
+                            
+                            <div class="space-y-2 pt-2" id="wf-specs">
+                                <div class="flex items-center gap-3 text-xs font-mono text-ind-silverWhite">
+                                    <i class="fa-solid fa-circle-check text-ind-emerald"></i>
+                                    <span>Material: Aluminum 6061 Extrusion Off-cuts</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-xs font-mono text-ind-silverWhite">
+                                    <i class="fa-solid fa-circle-check text-ind-emerald"></i>
+                                    <span>Verified Lot Size: 42.5 Metric Tonnes</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-xs font-mono text-ind-silverWhite">
+                                    <i class="fa-solid fa-circle-check text-ind-emerald"></i>
+                                    <span>Generator Plant: Pune Precision Auto-Hub</span>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- 3 Stat Modules with Live Simulated Metrics -->
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
-                            
-                            <!-- Stat 1 -->
-                            <div class="p-4 rounded-xl bg-brand-surface/60 border border-brand-saffron/20 relative overflow-hidden">
-                                <div class="text-[11px] font-mono text-brand-silverMuted uppercase tracking-wider">Telemetry Ingestion Velocity</div>
-                                <div class="text-2xl sm:text-3xl font-extrabold font-display text-saffron-gradient mt-1" id="dynamic-throughput">18.42 TB/s</div>
-                                <div class="mt-2 text-xs text-brand-silverMid flex justify-between">
-                                    <span>Cluster Saturation</span>
-                                    <span class="font-mono text-brand-saffron">78.4%</span>
+                        <!-- Right Live Manifest Card -->
+                        <div class="lg:col-span-6">
+                            <div class="p-6 rounded-2xl bg-black/70 border border-white/10 font-mono text-xs shadow-2xl relative overflow-hidden">
+                                <div class="flex items-center justify-between pb-3 border-b border-white/10 text-ind-silverMuted">
+                                    <span>IND-VIA_MANIFEST_PACKET_v2.4</span>
+                                    <span class="text-ind-emerald flex items-center gap-1.5">
+                                        <span class="w-2 h-2 rounded-full bg-ind-emerald animate-ping"></span> AUTHENTICATED
+                                    </span>
                                 </div>
-                                <div class="w-full bg-black/60 h-1.5 rounded-fu
+                                
+                                <div class="py-4 space-y-3" id="wf-console">
+                                    <div class="flex justify-between">
+                                        <span class="text-ind-silverMuted">TRANSACTION ID:</span>
+                                        <span class="text-white font-bold">IND-REC-2026-8819</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-ind-silverMuted">INSPECTION ATTESTATION:</span>
+                                        <span class="text-ind-saffron font-bold">PRE-DISPATCH LEVEL A1</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-ind-silverMuted">LOGISTICS MILESTONE:</span>
+                                        <span class="text-ind-emerald font-bold">DISPATCH QUEUED // GATE PASS #410</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-ind-silverMuted">TAX & PO LINKAGE:</span>
+                                        <span class="text-white font-bold">PO-99211 ⇄ GST-INV-44120</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-ind-silverMuted">
+                                    <span>Assurance Ledger: ZERO DISPUTES</span>
+                                    <span class="text-ind-saffron">IND-VIA Protocol</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SECONDARY MATERIAL RECOVERY VALUE CALCULATOR ================= -->
+        <section id="calculator" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel p-8 sm:p-14 border border-ind-saffron/30 shadow-saffron-glow">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-4">
+                        <span class="text-xs font-mono uppercase tracking-widest text-ind-saffron">Commercial Value Estimator</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+                            Secondary Material Recovery Calculator
+                        </h2>
+                        <p class="text-ind-silverMid text-sm leading-relaxed">
+                            Evaluate how much locked capital your manufacturing units can recover monthly by bypassing multi-tier scrap brokers and tapping direct industrial remelter demand.
+                        </p>
+
+                        <!-- Input Sliders -->
+                        <div class="space-y-5 pt-4">
+                            <div>
+                                <label class="block text-xs font-mono uppercase text-ind-silverWhite mb-2">Material Category</label>
+                                <select id="calc-material" onchange="calculateRecovery()" class="w-full px-4 py-3 rounded-xl bg-ind-surface border border-white/10 text-white font-sans text-sm focus:outline-none focus:border-ind-saffron">
+                                    <option value="68000">Industrial Ferrous Off-Cuts & Heavy Melt</option>
+                                    <option value="195000">Aluminum Billet Off-cuts & Extrusions (6000 Series)</option>
+                                    <option value="620000">Copper Strips, Rods & Cathode Off-cuts</option>
+                                    <option value="98000">Engineering Polymers (POM, Nylon, Polycarbonate Regrind)</option>
+                                    <option value="340000">Stainless Steel 316 / 304 Solid Off-cuts</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between items-center text-xs font-mono mb-2">
+                                    <span class="text-ind-silverWhite uppercase">Monthly Secondary Generation:</span>
+                                    <span class="text-ind-saffron font-bold text-sm" id="calc-tonnage-lbl">45 Metric Tonnes</span>
+                                </div>
+                                <input id="calc-tonnage" type="range" min="5" max="300" step="5" value="45" oninput="calculateRecovery()" class="w-full h-2 bg-ind-obsidian rounded-lg appearance-none cursor-pointer accent-ind-saffron">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output Card -->
+                    <div class="lg:col-span-6">
+                        <div class="p-8 rounded-2xl bg-ind-titanium border border-white/10 text-center space-y-6">
+                            <div class="text-xs font-mono uppercase text-ind-silverMuted tracking-widest">
+                                Estimated Recoverable Net Liquidity / Month
+                            </div>
+
+                            <div class="text-4xl sm:text-5xl font-black font-display text-emerald-flow" id="calc-result-gross">
+                                ₹ 87,75,000
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/10 text-left">
+                                <div class="p-4 rounded-xl bg-black/40">
+                                    <div class="text-[11px] font-mono text-ind-silverMuted">Direct Value Uplift vs Scrap Scrap Broker</div>
+                                    <div class="text-lg font-bold font-mono text-ind-saffron mt-1" id="calc-uplift">+ ₹ 10,53,000</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-black/40">
+                                    <div class="text-[11px] font-mono text-ind-silverMuted">Commercial Reconciliation</div>
+                                    <div class="text-lg font-bold font-mono text-ind-emerald mt-1">100% Tax Compliant</div>
+                                </div>
+                            </div>
+
+                            <button onclick="openPortalModal('Direct Plant Audit & Enrolment')" class="w-full py-4 rounded-xl text-black font-extrabold text-xs uppercase tracking-wider font-display bg-gradient-to-r from-ind-saffron via-amber-400 to-ind-emerald shadow-saffron-glow hover:scale-105 active:scale-95 transition-all">
+                                Request Plant Recovery Assessment
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= OUR APPROACH & VALUE PROPOSITION ================= -->
+        <section id="approach" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-mono uppercase tracking-widest text-ind-saffron border border-ind-saffron/30 px-3 py-1 rounded-full">
+                        Commercial Philosophy
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-black font-display text-white leading-tight">
+                        Our Approach
+                    </h2>
+                    <p class="text-ind-silverMid text-base leading-relaxed">
+                        We believe industrial commerce can become more transparent, traceable and efficient when material discovery, physical execution and commercial documentation work together.
+                    </p>
+                    <p class="text-ind-silverMid text-base leading-relaxed">
+                        Our focus is on building an integrated, asset-light network that helps industrial businesses recover value from secondary materials while improving coordination across the transaction lifecycle.
+                    </p>
+                    
+                    <div class="p-5 rounded-2xl bg-ind-surface/60 border-l-4 border-ind-emerald">
+                        <div class="font-bold text-white text-sm">Asset-Light, Technology-Enabled</div>
+                        <div class="text-xs text-ind-silverMuted mt-1">
+                            We don't tie capital into depreciating scrap warehouses. We govern the commerce, verification, and settlement pipeline.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    
+                    <div class="glass-panel p-6">
+                        <div class="text-ind-saffron text-2xl mb-3"><i class="fa-solid fa-eye"></i></div>
+                        <h4 class="font-bold font-display text-white text-lg">Radical Transparency</h4>
+                        <p class="text-xs text-ind-silverMuted mt-2 leading-relaxed">
+                            No hidden markups or phantom buyers. Direct commercial matching based on metallurgical grade and certified specs.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6">
+                        <div class="text-white text-2xl mb-3"><i class="fa-solid fa-route"></i></div>
+                        <h4 class="font-bold font-display text-white text-lg">End-to-End Traceability</h4>
+                        <p class="text-xs text-ind-silverMuted mt-2 leading-relaxed">
+                            From plant off-cut bay to foundry furnace gate, every movement is logged against transport milestones.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6">
+                        <div class="text-ind-emerald text-2xl mb-3"><i class="fa-solid fa-recycle"></i></div>
+                        <h4 class="font-bold font-display text-white text-lg">Circular Efficiency</h4>
+                        <p class="text-xs text-ind-silverMuted mt-2 leading-relaxed">
+                            Keeping secondary materials inside the high-grade industrial production stream rather than being degraded.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6">
+                        <div class="text-ind-saffron text-2xl mb-3"><i class="fa-solid fa-file-shield"></i></div>
+                        <h4 class="font-bold font-display text-white text-lg">Assured Settlement</h4>
+                        <p class="text-xs text-ind-silverMuted mt-2 leading-relaxed">
+                            Structured dispute mitigation protocols eliminate protracted delays in invoice clearance and weight disputes.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= FOUNDER & LEADERSHIP VISION ================= -->
+        <section id="founder" class="py-24 bg-ind-titanium/80 border-t border-white/10 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="glass-panel p-8 sm:p-14 border border-white/15">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        
+                        <!-- Founder Crest / Visual -->
+                        <div class="lg:col-span-5 flex flex-col items-center text-center">
+                            <div class="relative w-52 h-52 sm:w-60 sm:h-60 rounded-3xl p-1 bg-gradient-to-tr from-ind-saffron via-white/30 to-ind-emerald shadow-2xl flex items-center justify-center">
+                                <div class="w-full h-full rounded-[22px] bg-ind-obsidian flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+                                    
+                                    <div class="w-20 h-20 rounded-2xl bg-ind-surface border border-white/15 flex items-center justify-center mb-4">
+                                        <i class="fa-solid fa-compass-drafting text-3xl text-ind-saffron"></i>
+                                    </div>
+                                    <h4 class="font-display font-extrabold text-white text-xl">NAVNEET TIWARI</h4>
+                                    <p class="text-xs font-mono uppercase text-ind-saffron tracking-widest mt-1">Founder & Visionary</p>
+                                    <span class="mt-3 text-[10px] font-mono px-3 py-1 rounded-full bg-white/5 border border-white/10 text-ind-silverWhite">
+                                        IND-VIA Leadership
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vision Direct Statement -->
+                        <div class="lg:col-span-7 space-y-6">
+                            <span class="text-xs font-mono uppercase tracking-widest text-ind-emerald border border-ind-emerald/30 px-3 py-1 rounded-full">
+                                Executive Statement
+                            </span>
+
+                            <h3 class="text-2xl sm:text-4xl font-extrabold font-display text-white leading-tight">
+                                "Our vision is to build a trusted industrial commerce network that makes resource recovery and material flows more efficient, verifiable and connected."
+                            </h3>
+
+                            <div class="space-y-4 text-ind-silverMid text-sm leading-relaxed">
+                                <p>
+                                    Under the vision of <strong class="text-white">Navneet Tiwari</strong>, IND-VIA was conceived to fix one of manufacturing's deepest blind spots: the friction, opacity, and value leakage in secondary material transactions.
+                                </p>
+                                <p>
+                                    By unifying material testing standards, transport execution checkpoints, and automated invoice verification into a managed network, IND-VIA is turning industrial recovery into a high-trust, predictable asset class.
+                                </p>
+                            </div>
+
+                            <div class="pt-6 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
+                                <div>
+                                    <div class="text-base font-bold text-white font-display">Navneet Tiwari</div>
+                                    <div class="text-xs text-ind-silverMuted font-mono">Founder // IND-VIA Commercial Network</div>
+                                </div>
+                                <button onclick="openPortalModal('Strategic Founder Dialogue')" class="px-5 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider text-white border border-white/20 bg-white/5 hover:bg-ind-saffron hover:text-black hover:border-ind-saffron transition-all">
+                                    Direct Executive Contact
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= ENTERPRISE CALL TO ACTION ================= -->
+        <section class="py-24 relative">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="p-8 sm:p-16 rounded-3xl bg-gradient-to-r from-ind-titanium via-ind-surface to-ind-titanium border border-ind-saffron/40 shadow-saffron-glow">
+                    
+                    <div class="text-xs font-mono uppercase tracking-widest text-ind-emerald mb-4">
+                        Verified. Integrated. Assured.
+                    </div>
+                    
+                    <h2 class="text-3xl sm:text-5xl font-black font-display text-white">
+                        Connect Your Secondary Material Flows Today
+                    </h2>
+
+                    <p class="mt-4 text-ind-silverMid max-w-2xl mx-auto text-sm sm:text-base">
+                        Whether you generate 20 tonnes or 2,000 tonnes of industrial off-cuts and secondary materials, IND-VIA guarantees verified matching, seamless logistics, and prompt commercial settlement.
+                    </p>
+
+                    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                        <button onclick="openPortalModal('Industrial Supplier Enrolment')" class="px-8 py-4 rounded-xl text-black font-extrabold text-xs uppercase tracking-wider font-display bg-gradient-to-r from-ind-saffron via-amber-400 to-ind-emerald shadow-saffron-glow hover:scale-105 active:scale-95 transition-all">
+                            Enlist as Industrial Generator
+                        </button>
+                        <button onclick="openPortalModal('Verified Buyer Network Application')" class="px-8 py-4 rounded-xl text-white font-semibold text-xs uppercase tracking-wider border border-white/20 bg-white/5 hover:bg-white/10 transition-all">
+                            Apply as Certified Buyer
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= HIGH-END FOOTER ================= -->
+    <footer class="border-t border-white/10 bg-ind-obsidian py-14 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12">
+                
+                <!-- Col 1: Brand & Logo -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="Logo.png" 
+                             alt="IND-VIA Logo" 
+                             class="h-10 w-auto object-contain"
+                             onerror="displayFallbackLogo(this, 'footer-logo-fallback')">
+                        
+                        <div id="footer-logo-fallback" class="hidden items-center tracking-tighter font-display text-xl font-black">
+                            <span class="text-ind-saffron">IND</span>
+                            <span class="text-white mx-0.5">-</span>
+                            <span class="text-ind-silverMid">V</span>
+                            <span class="text-ind-emerald">IA</span>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-ind-silverMuted leading-relaxed max-w-sm">
+                        IND-VIA is building a connected, managed network for industrial commerce and resource recovery. Spearheaded by <span class="text-white font-semibold">Navneet Tiwari</span>.
+                    </p>
+                    <div class="font-mono text-xs text-ind-silverWhite font-bold">
+                        Verified. Integrated. Assured.
+                    </div>
+                </div>
+
+                <!-- Col 2: Network Pillars -->
+                <div class="md:col-span-3">
+                    <h5 class="text-xs font-mono uppercase tracking-widest text-white mb-4">Core Dimensions</h5>
+                    <ul class="space-y-2 text-xs text-ind-silverMuted">
+                        <li><a href="#what-we-connect" class="hover:text-ind-saffron transition-colors">Material Discovery</a></li>
+                        <li><a href="#what-we-connect" class="hover:text-white transition-colors">Quality Verification</a></li>
+                        <li><a href="#what-we-connect" class="hover:text-ind-emerald transition-colors">Logistics Coordination</a></li>
+                        <li><a href="#what-we-connect" class="hover:text-ind-saffron transition-colors">Transaction Integration</a></li>
+                        <li><a href="#what-we-connect" class="hover:text-ind-emerald transition-colors">Reconciliation & Assurance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Leadership & Governance -->
+                <div class="md:col-span-4">
+                    <h5 class="text-xs font-mono uppercase tracking-widest text-white mb-4">Network Governance</h5>
+                    <ul class="space-y-2 text-xs text-ind-silverMuted">
+                        <li><a href="#founder" class="hover:text-white transition-colors">Founder: Navneet Tiwari</a></li>
+                        <li><a href="#approach" class="hover:text-white transition-colors">Pre-Dispatch Inspection Standards</a></li>
+                        <li><a href="#calculator" class="hover:text-white transition-colors">Secondary Material Recovery Estimator</a></li>
+                        <li><a href="javascript:void(0)" onclick="openPortalModal('Compliance Enquiries')" class="hover:text-white transition-colors">GST & E-Way Bill Reconciliation</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs text-ind-silverMuted gap-4">
+                <div>&copy; 2026 <strong>IND-VIA</strong>. All commercial rights reserved. Founded by Navneet Tiwari.</div>
+                <div class="flex gap-6 font-mono text-[11px]">
+                    <a href="javascript:void(0)" class="hover:text-ind-saffron">Inspection SLA</a>
+                    <a href="javascript:void(0)" class="hover:text-white">Commercial Terms</a>
+                    <a href="javascript:void(0)" class="hover:text-ind-emerald">Dispute Charter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= INTERACTIVE APPLICATION MODAL ================= -->
+    <div id="portal-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl transition-all">
+        <div class="relative w-full max-w-lg bg-ind-titanium border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl">
+            
+            <button onclick="closePortalModal()" class="absolute top-6 right-6 text-ind-silverMuted hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-6">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-ind-saffron animate-ping"></span>
+                    <span class="text-xs font-mono uppercase tracking-widest text-ind-saffron" id="modal-role-label">Industrial Access</span>
+                </div>
+                <h3 id="modal-heading" class="text-2xl font-bold font-display text-white mt-1">Enroll in IND-VIA Network</h3>
+                <p class="text-xs text-ind-silverMuted mt-1">Direct integration with Founder Navneet Tiwari's operations team.</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-mono uppercase text-ind-silverWhite mb-1">Company / Plant Name</label>
+                    <input type="text" required placeholder="e.g. Acme Forgings & Alloys Pvt Ltd" class="w-full px-4 py-3 rounded-xl bg-ind-surface border border-white/10 text-white text-sm focus:outline-none focus:border-ind-saffron">
+                </div>
+                <div>
+                    <label class="block text-xs font-mono uppercase text-ind-silverWhite mb-1">Operational Contact Person</label>
+                    <input type="text" required placeholder="e.g. Ramesh Verma (Plant Commercial Head)" class="w-full px-4 py-3 rounded-xl bg-ind-surface border border-white/10 text-white text-sm focus:outline-none focus:border-ind-saffron">
+                </div>
+                <div>
+                    <label class="block text-xs font-mono uppercase text-ind-silverWhite mb-1">Corporate Email & Phone</label>
+                    <input type="email" required placeholder="commercial@acmeforgings.com" class="w-full px-4 py-3 rounded-xl bg-ind-surface border border-white/10 text-white text-sm focus:outline-none focus:border-ind-emerald">
+                </div>
+                <div>
+                    <label class="block text-xs font-mono uppercase text-ind-silverWhite mb-1">Primary Material Classification</label>
+                    <select class="w-full px-4 py-3 rounded-xl bg-ind-surface border border-white/10 text-white text-sm focus:outline-none focus:border-ind-saffron">
+                        <option>Aluminum 6000/7000 Series Off-cuts</option>
+                        <option>Heavy Melting Steel (HMS 1 & 2) Off-cuts</option>
+                        <option>Copper / Brass Strips & Rods</option>
+                        <option>Engineering Polymer Regrinds</option>
+                        <option>Surplus / Dead Inventory Stocklots</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="modal-submit-btn" class="w-full py-4 rounded-xl text-black font-extrabold text-xs uppercase tracking-wider font-display bg-gradient-to-r from-ind-saffron via-amber-400 to-ind-emerald shadow-saffron-glow hover:scale-105 active:scale-95 transition-all">
+                    Submit Network Application
+                </button>
+            </form>
+
+            <div id="modal-success-box" class="hidden mt-4 p-3.5 rounded-xl bg-ind-emerald/10 border border-ind-emerald/40 text-ind-emerald text-xs font-mono text-center">
+                <i class="fa-solid fa-circle-check"></i> Application received. An IND-VIA verification manager will contact your plant.
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= LOGIC & INTERACTION JAVASCRIPT ================= -->
+    <script>
+        // High-Quality Fallback Safeguard for Logo.png
+        function displayFallbackLogo(imgElement, fallbackId) {
+            imgElement.style.display = 'none';
+            const fallbackElem = document.getElementById(fallbackId);
+            if (fallbackElem) {
+                fallbackElem.classList.remove('hidden');
+                fallbackElem.classList.add('flex');
+            }
+        }
+
+        // Mobile Menu Drawer Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+        }
+
+        // Interactive Background Node-Flow Canvas
+        (function initNetworkCanvas() {
+            const canvas = document.getElementById('network-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            // Network nodes simulating materials moving across hubs
+            const nodes = [];
+            const nodeCount = 55;
+            const colors = ['#FF7700', '#00E676', '#CBD5E1'];
+
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.7,
+                    vy: (Math.random() - 0.5) * 0.7,
+                    radius: Math.random() * 2 + 1.2,
+                    color: colors[Math.floor(Math.random() * colors.length)]
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
+
+                for (let i = 0; i < nodes.length; i++) {
+                    const n = nodes[i];
+                    n.x += n.vx;
+                    n.y += n.vy;
+
+                    if (n.x < 0 || n.x > width) n.vx *= -1;
+                    if (n.y < 0 || n.y > height) n.vy *= -1;
+
+                    // Draw node point
+                    ctx.beginPath();
+                    ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = n.color;
+                    ctx.fill();
+
+                    // Connect neighboring logistics lines
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const n2 = nodes[j];
+                        const dist = Math.hypot(n.x - n2.x, n.y - n2.y);
+                        if (dist < 130) {
+                            ctx.beginPath();
+                            ctx.moveTo(n.x, n.y);
+                            ctx.lineTo(n2.x, n2.y);
+                            ctx.strokeStyle = `rgba(148, 163, 184, ${0.15 * (1 - dist / 130)})`;
+                            ctx.lineWidth = 0.75;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+
+        // Interactive Workflow Lifecycle Data
+        const workflowStages = [
+            {
+                badge: "Phase 01: Material Discovery",
+                title: "Connecting Material Generators with Verified Buyers",
+                desc: "Manufacturing plants list secondary lots, off-cuts, and recoverable stock. Verified remelters and direct industrial processors gain immediate visibility without intermediary price exploitation.",
+                material: "Aluminum 6061 Extrusions & Billets",
+                lot: "42.5 Metric Tonnes",
+                checkpoint: "Pune Auto-Cluster ⇄ Surat Smelter",
+                status: "BUYER CONFIRMED",
+                color: "text-ind-saffron"
+            },
+            {
+                badge: "Phase 02: Quality Verification",
+                title: "Supporting Pre-Dispatch Inspection & Testing",
+                desc: "Pre-dispatch physical inspection protocols test metallurgy, spectrographic purity, moisture, and contamination. Digital inspection tags accompany the lot before leaving the generator plant.",
+                material: "Heavy Melt Steel Off-cuts (Grade 1)",
+                lot: "88.0 Metric Tonnes",
+                checkpoint: "Spectro Attestation: Passed (0.02% Contamination)",
+                status: "INSPECTION SEALED",
+                color: "text-white"
+            },
+            {
+                badge: "Phase 03: Logistics Coordination",
+                title: "Connecting Material Movement with Operational Milestones",
+                desc: "Coordinating multi-axle trailers, weighbridge gross/tare records, gate clearances, and dedicated unloading slots at downstream recycling facilities.",
+                material: "Copper Off-Cut Coils & Busbars",
+                lot: "18.2 Metric Tonnes",
+                checkpoint: "Transit Milestone: En Route (GPS Geo-Fenced)",
+                status: "WEIGHT LOCKED",
+                color: "text-ind-emerald"
+            },
+            {
+                badge: "Phase 04: Transaction Integration",
+                title: "Linking Purchase Orders, Delivery Records & Invoices",
+                desc: "Purchase orders, automated weighbridge tickets, inspection certificates, and GST e-invoices are dynamically bound into a unified digital transaction packet.",
+                material: "Engineering Nylon-66 Production Off-Cuts",
+                lot: "25.0 Metric Tonnes",
+                checkpoint: "Matched: PO #99102 == E-Way 88129 == INV-0041",
+                status: "PACKET VALIDATED",
+                color: "text-ind-saffron"
+            },
+            {
+                badge: "Phase 05: Reconciliation & Assurance",
+                title: "Transparent Transaction Records & Structured Dispute Resolution",
+                desc: "Zero protracted payment disputes. Our structured reconciliation engine ensures rapid financial settlement, transparent deductions (if any), and mutual closure.",
+                material: "Stainless Steel 316 Industrial Scrap",
+                lot: "64.0 Metric Tonnes",
+                checkpoint: "Net Balance Settled: ₹ 1,48,20,000",
+                status: "ESCROW RELEASED",
+                color: "text-ind-emerald"
+            }
+        ];
+
+        function setWorkflowStage(index) {
+            const data = workflowStages[index];
+            const buttons = document.querySelectorAll('.stage-btn');
+            
+            buttons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.className = "stage-btn active p-4 rounded-xl text-left border border-ind-saffron bg-ind-saffron/10 transition-all";
+                } else {
+                    btn.className = "stage-btn p-4 rounded-xl text-left border border-white/10 bg-ind-surface/50 hover:border-white/30 transition-all";
+                }
+            });
+
+            document.getElementById('wf-badge').innerText = data.badge;
+            document.getElementById('wf-title').innerText = data.title;
+            document.getElementById('wf-desc').innerText = data.desc;
+
+            const specs = document.getElementById('wf-specs');
+            if (specs) {
+                specs.innerHTML = `
+                    <div class="flex items-center gap-3 text-xs font-mono text-ind-silverWhite">
+                        <i class="fa-solid fa-circle-check text-ind-emerald"></i>
+                        <span>Class: ${data.material}</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs font-mono text-ind-silverWhite">
+                        <i class="fa-solid fa-circle-check text-ind-emerald"></i>
+                        <span>Lot Metric: ${data.lot}</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs font-mono text-ind-silverWhite">
+                        <i class="fa-solid fa-circle-check text-ind-emerald"></i>
+                        <span>Node Status: ${data.checkpoint}</span>
+                    </div>
+                `;
+            }
+
+            const consoleBox = document.getElementById('wf-console');
+            if (consoleBox) {
+                consoleBox.innerHTML = `
+                    <div class="flex justify-between">
+                        <span class="text-ind-silverMuted">STAGE TELEMETRY:</span>
+                        <span class="${data.color} font-bold">${data.status}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-ind-silverMuted">MATERIAL IDENTIFIER:</span>
+                        <span class="text-white font-bold">${data.material}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-ind-silverMuted">MEASURED VOLUME:</span>
+                        <span class="text-white font-bold">${data.lot}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-ind-silverMuted">IND-VIA PROTOCOL:</span>
+                        <span class="text-ind-emerald font-bold">ASSURED // VERIFIED</span>
+                    </div>
+                `;
+            }
+        }
+
+        // Secondary Material Recovery Calculator Engine
+        function calculateRecovery() {
+            const ratePerTonne = parseFloat(document.getElementById('calc-material').value);
+            const tonnage = parseFloat(document.getElementById('calc-tonnage').value);
+
+            document.getElementById('calc-tonnage-lbl').innerText = tonnage + " Metric Tonnes";
+
+            const grossValue = ratePerTonne * tonnage;
+            const upliftValue = grossValue * 0.12; // 12% standard direct net uplift over traditional scrap broker cuts
+
+            document.getElementById('calc-result-gross').innerText = "₹ " + grossValue.toLocaleString('en-IN');
+            document.getElementById('calc-uplift').innerText = "+ ₹ " + Math.round(upliftValue).toLocaleString('en-IN');
+        }
+
+        // Application Modal Controller
+        function openPortalModal(contextTitle) {
+            const modal = document.getElementById('portal-modal');
+            const heading = document.getElementById('modal-heading');
+            const label = document.getElementById('modal-role-label');
+            if (modal) {
+                modal.classList.remove('hidden');
+                if (heading && contextTitle) heading.innerText = contextTitle;
+                if (label && contextTitle) label.innerText = contextTitle;
+            }
+        }
+
+        function closePortalModal() {
+            const modal = document.getElementById('portal-modal');
+            const success = document.getElementById('modal-success-box');
+            if (modal) modal.classList.add('hidden');
+            if (success) success.classList.add('hidden');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const success = document.getElementById('modal-success-box');
+            const submitBtn = document.getElementById('modal-submit-btn');
+            if (success) success.classList.remove('hidden');
+            if (submitBtn) submitBtn.innerText = "APPLICATION CONFIRMED ✓";
+
+            setTimeout(() => {
+                closePortalModal();
+                if (submitBtn) submitBtn.innerText = "SUBMIT NETWORK APPLICATION";
+            }, 2500);
+        }
+
+        // Initialize default calculator value on page ready
+        calculateRecovery();
+    </script>
+</body>
+</html>
+```
